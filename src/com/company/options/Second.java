@@ -23,7 +23,6 @@ public class Second
         {
             Car randomCar3 = AutoBot.garage[rndC3];
             System.out.println(randomCar3);
-
         }
         System.out.println("Which one u want?");
         Scanner in = new Scanner(System.in);

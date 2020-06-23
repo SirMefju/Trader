@@ -42,4 +42,16 @@ public class AutoBot
         garage[23] = new Car("Mercedes23", "S", 150000.0, 35000.0,"White","breaks");
         garage[24] = new Car("Mercedes24", "S", 150000.0, 35000.0,"White","breaks");
     }
+    public static void setCar(Car car, int index)
+    {
+        garage[index] = car;
+    }
+    public static int findInGarage(Car car)
+    {
+        for (int i = 0; i < garage.length; i++)
+        {
+            if (garage[i] == car) return i;
+        }
+        return -1;
+    }
 }

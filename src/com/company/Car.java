@@ -33,7 +33,8 @@ public class Car
             Player.cash-=value;
             Player.cash-=value*0.02;
             AutoBot.cash+=value;
-            Player.setCar(this);
+            Player.setCar(this, Player.findFreeSpace());
+            AutoBot.setCar(null, AutoBot.findInGarage(this));
             AutoBot.garage = null;
             System.out.println("You bought "+this+"\nRemember you paid 2% car tax!");
             Car.wash();
@@ -42,7 +43,7 @@ public class Car
         else if (Player.cash < value + washPrice + (value*0.02))
         {
             System.out.println("You don't have enough money");
-            Second.second();
+            Menu.choose();
         }
     }
     public String toString() {return this.producer+" "+this.model+" which costs "+value+" with broken "+part;}
