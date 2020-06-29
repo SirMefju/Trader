@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Sixth
 {
-    public static void sixth()
+    public static void sixth(Player me)
     {
         System.out.println("Which one u want to sell?");
         Player.playerGarage();
@@ -32,7 +32,7 @@ public class Sixth
         else
         {
             System.out.println("Wrong choice!");
-            Sixth.sixth();
+            Sixth.sixth(me);
         }
     }
 }

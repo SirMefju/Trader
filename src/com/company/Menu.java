@@ -15,7 +15,7 @@ public class Menu
         System.out.println("6.   Sell a car");
         System.out.println("7.   Buy advertisement");
         System.out.println("8.   Check account balance.");
-        System.out.println("9.   Check expense history.");
+        System.out.println("9.   Check transaction history.");
         System.out.println("10.  Check repair history.");
         System.out.println("11.  Check total expenditure.");
         System.out.println("0.   Exit.        ");
@@ -24,63 +24,63 @@ public class Menu
         int x = in.nextInt();
         return x;
     }
-    public static void choose()
+    public static void choose(Player Player)
     {
         int choice = menu();
             if (choice == 1)
             {
-                First.first();
-                choose();
+                First.first(Player);
+                choose(Player);
             }
             else if (choice == 2)
             {
-                Second.second();
-                choose();
+                Second.second(Player);
+                choose(Player);
             }
             else if (choice == 3)
             {
-                Third.third();
-                choose();
+                Third.third(Player);
+                choose(Player);
             }
             else if (choice == 4)
             {
-                Fourth.fourth();
-                choose();
+                Fourth.fourth(Player);
+                choose(Player);
             }
             else if (choice == 5)
             {
-                Fifth.fifth();
-                choose();
+                Fifth.fifth(Player);
+                choose(Player);
             }
             else if (choice == 6)
             {
-                Sixth.sixth();
-                choose();
+                Sixth.sixth(Player);
+                choose(Player);
             }
             else if (choice == 7)
             {
-                Seventh.seventh();
-                choose();
+                Seventh.seventh(Player);
+                choose(Player);
             }
             else if (choice == 8)
             {
-                Eighth.eighth();
-                choose();
+                Eighth.eighth(Player);
+                choose(Player);
             }
             else if (choice == 9)
             {
-                Ninth.ninth();
-                choose();
+                Ninth.ninth(Player);
+                choose(Player);
             }
             else if (choice == 10)
             {
-                Tenth.tenth();
-                choose();
+                Tenth.tenth(Player);
+                choose(Player);
             }
             else if (choice == 11)
             {
-                Eleventh.eleventh();
-                choose();
+                Eleventh.eleventh(Player);
+                choose(Player);
             }
             else if (choice == 0)
             {
@@ -89,7 +89,7 @@ public class Menu
             else
             {
                 System.out.println("Wrong choice try again.");
-                choose();
+                choose(Player);
             }
     }
 }

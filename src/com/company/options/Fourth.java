@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Fourth
 {
-    public static void fourth()
+    public static void fourth(Player me)
     {
         System.out.println("Which car you want to repair?");
         Player.playerGarage();
@@ -32,7 +32,7 @@ public class Fourth
         else
         {
             System.out.println("Wrong choice!");
-            Fourth.fourth();
+            Fourth.fourth(me);
         }
 
     }

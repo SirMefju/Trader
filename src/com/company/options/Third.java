@@ -4,7 +4,7 @@ import com.company.Player;
 
 public class Third
 {
-    public static void third()
+    public static void third(Player me)
     {
         System.out.println("Your cars:");
         Player.playerGarage();

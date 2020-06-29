@@ -1,13 +1,16 @@
 package com.company.options;
 import com.company.AutoBot;
 import com.company.Car;
+import com.company.Menu;
+import com.company.Player;
+
 import java.util.Scanner;
 public class Second
 {
-    public static void second()
+    public static void second(Player me)
     {
         AutoBot.botGarage();
-        System.out.println("Available cars for You:");
+        System.out.println("At this moment available cars for You:");
         int rndC1 = (int) (Math.random() * AutoBot.garage.length);
         int rndC2 = (int) (Math.random() * AutoBot.garage.length);
         int rndC3 = (int) (Math.random() * AutoBot.garage.length);
@@ -42,7 +45,7 @@ public class Second
         else
         {
             System.out.println("Wrong choice!");
-            Second.second();
+            Second.second(me);
         }
     }
 }

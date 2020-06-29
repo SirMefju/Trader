@@ -1,25 +1,22 @@
 package com.company;
-
-import com.company.options.Second;
-
 public class Car
 {
     public final String producer;
     public final String model;
-    public static Double value = 1000.0;
+    public static Double value;
     public Double mileage;
     public String color;
-    public String part;
+    public String segment;
     public static Double washPrice = 50.0;
 
-    public Car(String producer,String model,Double value, Double mileage, String color, String part)
+    public Car(String producer,String model,Double value, Double mileage, String color, String segment)
     {
         this.producer = producer;
         this.model = model;
         Car.value = value;
         this.mileage = mileage;
         this.color = color;
-        this.part = part;
+        this.segment = segment;
     }
     public static void wash()
     {
@@ -43,7 +40,6 @@ public class Car
         else if (Player.cash < value + washPrice + (value*0.02))
         {
             System.out.println("You don't have enough money");
-            Menu.choose();
         }
     }
     public void sell()
@@ -56,5 +52,5 @@ public class Car
         System.out.println("Account balance: "+Player.cash);
 
     }
-    public String toString() {return this.producer+" "+this.model+" which costs "+value+" with broken "+part;}
+    public String toString() {return this.producer+" "+this.model+" which costs "+ value+", from "+segment+" segment.";}
 }

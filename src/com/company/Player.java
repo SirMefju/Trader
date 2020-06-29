@@ -3,7 +3,7 @@ package com.company;
 public class Player
 {
     public String firstName;
-    public static Double cash = 1000000.0;
+    public static Double cash = 100000.0;
     public static Car[] garage;
     public Player(String firstName, Double cash, Integer garageSize)
     {
