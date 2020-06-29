@@ -10,6 +10,16 @@ public class Human {
         Human.cash = cash;
         garage = new Car[garageSize];
     }
+
+    public static int findFreeSpace()
+    {
+        for (int i = 0; i < garage.length; i++)
+    {
+        if (garage[i] == null) return i;
+    }
+        return -1;
+    }
+
     public void traders()
     {
         Human trader1 = new Human("Mati",1000000.0,2);
@@ -17,5 +27,9 @@ public class Human {
         Human trader3 = new Human("Mati",1000000.0,2);
         Human trader4 = new Human("Mati",1000000.0,2);
         Human trader5 = new Human("Mati",1000000.0,2);
+    }
+    public static void setCar(Car car, int index)
+    {
+        garage[index] = car;
     }
 }

@@ -24,6 +24,7 @@ public class Car
     public static void wash()
     {
         Player.cash-=washPrice;
+        Player.cash-=value*0.02;
         System.out.println("You paid 50.0$ for car washing!");
     }
     public void buy()
@@ -31,7 +32,6 @@ public class Car
         if (Player.cash >= value + washPrice + (value*0.02))
         {
             Player.cash-=value;
-            Player.cash-=value*0.02;
             AutoBot.cash+=value;
             Player.setCar(this, Player.findFreeSpace());
             AutoBot.setCar(null, AutoBot.findInGarage(this));
@@ -45,6 +45,16 @@ public class Car
             System.out.println("You don't have enough money");
             Menu.choose();
         }
+    }
+    public void sell()
+    {
+        Player.cash+=value;
+        Car.wash();
+        Human.setCar(this, Human.findFreeSpace());
+        Player.setCar(null, Player.findInGarage(this));
+        System.out.println("You sold "+this+"\nRemember you paid 2% car tax!");
+        System.out.println("Account balance: "+Player.cash);
+
     }
     public String toString() {return this.producer+" "+this.model+" which costs "+value+" with broken "+part;}
 }
