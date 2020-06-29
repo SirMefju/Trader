@@ -10,7 +10,6 @@ public class Fourth
     public static void fourth(Player me)
     {
         System.out.println("Which car you want to repair?");
-        Player.playerGarage();
         for (int i = 0; i < Player.garage.length; i++)
         {
             System.out.println(Player.garage[i]);
@@ -19,15 +18,15 @@ public class Fourth
         int a = in.nextInt();
         if (a == 1)
         {
-            Repair.repair();
+            Repair.repair(me);
         }
         else if (a == 2)
         {
-            Repair.repair();
+            Repair.repair(me);
         }
         else if (a == 3)
         {
-            Repair.repair();
+            Repair.repair(me);
         }
         else
         {

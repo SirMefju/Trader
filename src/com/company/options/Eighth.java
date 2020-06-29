@@ -6,6 +6,6 @@ public class Eighth
 {
     public static void eighth(Player me)
     {
-        System.out.println("Your account balance: "+ Player.cash +"$!");
+        System.out.println("Your account balance: "+ me.cash +"$!");
     }
 }

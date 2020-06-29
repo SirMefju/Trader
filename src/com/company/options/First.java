@@ -1,17 +1,13 @@
 package com.company.options;
-
 import com.company.AutoBot;
-import com.company.Player;
-
 public class First
 {
-    public static void first(Player me)
+    public static void first(AutoBot bot)
         {
             System.out.println("Available cars for you:");
-            AutoBot.botGarage();
-            for(int i = 0; i<AutoBot.garage.length; i++)
+            for(int i = 0; i< bot.garage.length; i++)
             {
-                System.out.println(AutoBot.garage[i]);
+                System.out.println(bot.garage[i]);
             }
         }
 }

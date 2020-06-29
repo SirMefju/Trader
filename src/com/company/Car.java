@@ -3,7 +3,7 @@ public class Car
 {
     public final String producer;
     public final String model;
-    public static Double value;
+    public Double value;
     public Double mileage;
     public String color;
     public String segment;
@@ -13,44 +13,44 @@ public class Car
     {
         this.producer = producer;
         this.model = model;
-        Car.value = value;
+        this.value = value;
         this.mileage = mileage;
         this.color = color;
         this.segment = segment;
     }
-    public static void wash()
+    public void wash(Player player)
     {
-        Player.cash-=washPrice;
-        Player.cash-=value*0.02;
+        player.cash-=washPrice;
+        player.cash-=this.value*0.02;
         System.out.println("You paid 50.0$ for car washing!");
     }
-    public void buy()
+    public void buy(Player player, AutoBot bot)
     {
-        if (Player.cash >= value + washPrice + (value*0.02))
+        if (player.cash >= value + washPrice + (value*0.02))
         {
-            Player.cash-=value;
-            AutoBot.cash+=value;
+            player.cash-=value;
+            AutoBot.cash +=value;
             Player.setCar(this, Player.findFreeSpace());
-            AutoBot.setCar(null, AutoBot.findInGarage(this));
-            AutoBot.garage = null;
+            bot.setCar(null, bot.findInGarage(this));
+            bot.garage = null;
             System.out.println("You bought "+this+"\nRemember you paid 2% car tax!");
-            Car.wash();
-            System.out.println("Account balance: "+Player.cash);
+            Car.this.wash(player);
+            System.out.println("Account balance: "+player.cash);
         }
-        else if (Player.cash < value + washPrice + (value*0.02))
+        else if (player.cash < value + washPrice + (value*0.02))
         {
             System.out.println("You don't have enough money");
         }
     }
-    public void sell()
+    public void sell(Player player)
     {
-        Player.cash+=value;
-        Car.wash();
+        player.cash+=value;
+        Car.this.wash(player);
         Human.setCar(this, Human.findFreeSpace());
         Player.setCar(null, Player.findInGarage(this));
         System.out.println("You sold "+this+"\nRemember you paid 2% car tax!");
-        System.out.println("Account balance: "+Player.cash);
+        System.out.println("Account balance: "+player.cash);
 
     }
-    public String toString() {return this.producer+" "+this.model+" which costs "+ value+", from "+segment+" segment.";}
+    public String toString() {return this.producer+" "+this.model+" which costs "+ this.value+", from "+segment+" segment.";}
 }

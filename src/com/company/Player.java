@@ -3,21 +3,17 @@ package com.company;
 public class Player
 {
     public String firstName;
-    public static Double cash = 100000.0;
+    public Double cash;
     public static Car[] garage;
     public Player(String firstName, Double cash, Integer garageSize)
     {
         this.firstName = firstName;
-        Player.cash = cash;
+        this.cash = cash;
         garage = new Car[garageSize];
     }
     public static void setCar(Car car, int index)
     {
         garage[index] = car;
-    }
-    public static void playerGarage()
-    {
-        garage = new Car[3];
     }
     public static int findFreeSpace()
     {

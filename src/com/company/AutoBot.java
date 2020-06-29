@@ -2,16 +2,12 @@ package com.company;
 public class AutoBot
 {
     public String firstName;
-    public static Double cash=10.0;
-    public static Car[] garage;
-    public AutoBot(String firstName,Double cash, Integer garageSize)
+    public static Double cash;
+    public  Car[] garage;
+    public AutoBot(String firstName, Double cash)
     {
         this.firstName = firstName;
         AutoBot.cash = cash;
-        garage = new Car[garageSize];
-    }
-    public static void botGarage()
-    {
         garage = new Car[25];
         garage[0] = new Car("Mercedes", "S", 130000.0, 55000.0,"White","Premium");
         garage[1] = new Car("Mercedes", "C", 50000.0, 165000.0,"Black","Budget");
@@ -39,13 +35,13 @@ public class AutoBot
         garage[23] = new Car("Mercedes", "S", 150000.0, 35000.0,"White","Premium");
         garage[24] = new Car("BMW", "E46", 20000.0, 235000.0,"Green","Budget");
     }
-    public static void setCar(Car car, int index)
+    public void setCar(Car car, int index)
     {
-        garage[index] = car;
+        this.garage[index] = car;
     }
-    public static int findInGarage(Car car)
+    public int findInGarage(Car car)
     {
-        for (int i = 0; i < garage.length; i++)
+        for (int i = 0; i < this.garage.length; i++)
         {
             if (garage[i] == car) return i;
         }

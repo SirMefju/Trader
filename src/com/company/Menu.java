@@ -24,63 +24,63 @@ public class Menu
         int x = in.nextInt();
         return x;
     }
-    public static void choose(Player Player)
+    public static void choose(Player player, AutoBot bot)
     {
         int choice = menu();
             if (choice == 1)
             {
-                First.first(Player);
-                choose(Player);
+                First.first(bot);
+                choose(player,bot);
             }
             else if (choice == 2)
             {
-                Second.second(Player);
-                choose(Player);
+                Second.second(player,bot);
+                choose(player,bot);
             }
             else if (choice == 3)
             {
-                Third.third(Player);
-                choose(Player);
+                Third.third(player);
+                choose(player,bot);
             }
             else if (choice == 4)
             {
-                Fourth.fourth(Player);
-                choose(Player);
+                Fourth.fourth(player);
+                choose(player,bot);
             }
             else if (choice == 5)
             {
-                Fifth.fifth(Player);
-                choose(Player);
+                Fifth.fifth(player);
+                choose(player,bot);
             }
             else if (choice == 6)
             {
-                Sixth.sixth(Player);
-                choose(Player);
+                Sixth.sixth(player);
+                choose(player,bot);
             }
             else if (choice == 7)
             {
-                Seventh.seventh(Player);
-                choose(Player);
+                Seventh.seventh(player);
+                choose(player,bot);
             }
             else if (choice == 8)
             {
-                Eighth.eighth(Player);
-                choose(Player);
+                Eighth.eighth(player);
+                choose(player,bot);
             }
             else if (choice == 9)
             {
-                Ninth.ninth(Player);
-                choose(Player);
+                Ninth.ninth(player);
+                choose(player,bot);
             }
             else if (choice == 10)
             {
-                Tenth.tenth(Player);
-                choose(Player);
+                Tenth.tenth(player);
+                choose(player,bot);
             }
             else if (choice == 11)
             {
-                Eleventh.eleventh(Player);
-                choose(Player);
+                Eleventh.eleventh(player);
+                choose(player,bot);
             }
             else if (choice == 0)
             {
@@ -89,7 +89,7 @@ public class Menu
             else
             {
                 System.out.println("Wrong choice try again.");
-                choose(Player);
+                choose(player,bot);
             }
     }
 }
