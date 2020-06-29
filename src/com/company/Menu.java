@@ -18,6 +18,7 @@ public class Menu
         System.out.println("9.   Check transaction history.");
         System.out.println("10.  Check repair history.");
         System.out.println("11.  Check total expenditure.");
+        System.out.println("12.  Look at the regulations.");
         System.out.println("0.   Exit.        ");
         System.out.println("-----------------------------");
         Scanner in = new Scanner(System.in);
@@ -54,7 +55,7 @@ public class Menu
             }
             else if (choice == 6)
             {
-                Sixth.sixth(player);
+                Sixth.sixth(player,bot);
                 choose(player,bot);
             }
             else if (choice == 7)
@@ -80,6 +81,11 @@ public class Menu
             else if (choice == 11)
             {
                 Eleventh.eleventh(player);
+                choose(player,bot);
+            }
+            else if (choice == 12)
+            {
+                Twelfth.twelfth(player);
                 choose(player,bot);
             }
             else if (choice == 0)

@@ -1,4 +1,7 @@
 package com.company;
+
+import java.util.Random;
+
 public class Car
 {
     public final String producer;
@@ -21,7 +24,6 @@ public class Car
     public void wash(Player player)
     {
         player.cash-=washPrice;
-        player.cash-=this.value*0.02;
         System.out.println("You paid 50.0$ for car washing!");
     }
     public void buy(Player player, AutoBot bot)
@@ -29,6 +31,7 @@ public class Car
         if (player.cash >= value + washPrice + (value*0.02))
         {
             player.cash-=value;
+            player.cash-=this.value*0.02;
             AutoBot.cash +=value;
             Player.setCar(this, Player.findFreeSpace());
             bot.setCar(null, bot.findInGarage(this));
@@ -42,15 +45,26 @@ public class Car
             System.out.println("You don't have enough money");
         }
     }
-    public void sell(Player player)
+    public void sell(Player player, AutoBot bot)
     {
-        player.cash+=value;
-        Car.this.wash(player);
-        Human.setCar(this, Human.findFreeSpace());
-        Player.setCar(null, Player.findInGarage(this));
-        System.out.println("You sold "+this+"\nRemember you paid 2% car tax!");
-        System.out.println("Account balance: "+player.cash);
-
+        Random rn = new Random();
+        int x = rn.nextInt(3) + 1;
+        if(x == 1)
+        {
+            System.out.println("You lost one move.");
+            System.out.println("The customer thought about it :(");
+            Menu.choose(player,bot);
+        }
+        else
+            {
+            player.cash += value;
+            player.cash -= this.value * 0.02;
+            Car.this.wash(player);
+            Human.setCar(this, Human.findFreeSpace());
+            Player.setCar(null, Player.findInGarage(this));
+            System.out.println("You sold " + this + "\nRemember you paid 2% car tax!");
+            System.out.println("Account balance: " + player.cash);
+        }
     }
     public String toString() {return this.producer+" "+this.model+" which costs "+ this.value+", from "+segment+" segment.";}
 }

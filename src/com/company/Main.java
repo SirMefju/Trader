@@ -8,6 +8,7 @@ public class Main {
         String a = in.nextLine();
         Player me = new Player(a,1000000.0,5);
         AutoBot bot = new AutoBot("bot", 10000.0);
+        Human trader = new Human("Henry",10000.0,5);
         System.out.println("Hello "+a+", at the start you have: "+ me.cash +"$!");
         Menu.choose(me,bot);
     }
