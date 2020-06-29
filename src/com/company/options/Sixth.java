@@ -1,8 +1,6 @@
 package com.company.options;
 
-import com.company.AutoBot;
-import com.company.Human;
-import com.company.Player;
+import com.company.*;
 
 import java.util.Scanner;
 
@@ -20,28 +18,28 @@ public class Sixth
         int a = in.nextInt();
         if (a == 1)
         {
-            Sixth.client();
-            Player.garage[0].sell(me,bot,humans[x]);
+            Player.garage[0].sell(me,bot,getRandomClient(humans));
+            Menu.choose(me,bot,humans);
         }
         else if (a == 2)
         {
-            Sixth.client();
-            Player.garage[1].sell(me,bot,humans[x]);
+            Player.garage[1].sell(me,bot,getRandomClient(humans));
+            Menu.choose(me,bot,humans);
         }
         else if ( a == 3)
         {
-            Sixth.client();
-            Player.garage[2].sell(me,bot,humans[x]);
+            Player.garage[2].sell(me,bot,getRandomClient(humans));
+            Menu.choose(me,bot,humans);
         }
         else if ( a == 4)
         {
-            Sixth.client();
-            Player.garage[3].sell(me,bot,humans[x]);
+            Player.garage[3].sell(me,bot,getRandomClient(humans));
+            Menu.choose(me,bot,humans);
         }
         else if ( a == 5)
         {
-            Sixth.client();
-            Player.garage[4].sell(me,bot,humans[x]);
+            Player.garage[4].sell(me,bot,getRandomClient(humans));
+            Menu.choose(me,bot,humans);
         }
         else
         {
@@ -49,43 +47,50 @@ public class Sixth
             Sixth.sixth(me,bot,humans);
         }
     }
-    public static void client()
+    public static Human getRandomClient(Human[] humans)
     {
         System.out.println("Which client u want?");
-        Human[].humans;
-        int rnd = (int) (Math.random() * humans.length);
-        String cus = humans[rnd];
+        int rnd1 = (int) (Math.random() * humans.length);
+        int rnd2 = (int) (Math.random() * humans.length);
+        Human cus = humans[rnd1];
+        Human cus1 = humans[rnd2];
         System.out.println(cus);
-        if(advertisement == true)
+        System.out.println(cus1);
+        /*if(advertisementNet==true)
         {
-            String cus1 = humans[rnd];
-            System.out.println(cus1);
+            Human cus = humans[rnd];
+            System.out.println(cus);
         }
-        if(advertisementNet==true)
+        if(advertisement==true)
         {
-            String cus2 = humans[rnd];
-            String cus3 = humans[rnd];
-            System.out.println(cus2);
-            System.out.println(cus3);
-        }
+            Human cus = humans[rnd];
+            Human cus = humans[rnd];
+            System.out.println(cus);
+            System.out.println(cus);
+        }*/
         Scanner in = new Scanner(System.in);
         int b = in.nextInt();
         if(b==1)
         {
-            cus1==humans[x];
+            return cus;
         }
-        else if(b==2)
+        else if (b==2)
         {
-            cus2==humans[x];
+            return cus1;
+        }
+        /*else if(b==2)
+        {
+            cus2==humans[1];
         }
         else if(b==3)
         {
-            cus3==humans[x];
-        }
+            cus3==humans[2];
+        }*/
         else
         {
             System.out.println("Wrong choice!");
-            Sixth.client();
+            Sixth.getRandomClient(humans);
         }
+        return null;
     }
 }

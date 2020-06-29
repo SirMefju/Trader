@@ -18,11 +18,14 @@ public class Seventh
             System.out.println("You bought advertisement in Newspaper!");
             me.cash-=1000.0;
             System.out.println("Account balance: "+me.cash);
-            boolean advertisement == 1;
+            boolean advertisement;
         }
         else if(x==2)
         {
+            System.out.println("You bought advertisement in WebSite!");
             me.cash-=500.0;
+            System.out.println("Account balance: "+me.cash);
+            boolean advertisementNet;
         }
         else
         {
