@@ -11,11 +11,11 @@ public class Human {
         this.cash = cash;
         garage = new Car[garageSize];
     }
-    public static void setCar(Car car, int index)
+    public void setCar(Car car, int index)
     {
         garage[index] = car;
     }
-    public static int findFreeSpace()
+    public int findFreeSpace()
     {
         for (int i = 0; i < garage.length; i++)
         {
@@ -23,7 +23,7 @@ public class Human {
         }
         return -1;
     }
-    public static int findInGarage(Car car)
+    public int findInGarage(Car car)
     {
         for (int i = 0; i < garage.length; i++)
         {

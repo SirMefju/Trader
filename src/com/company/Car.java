@@ -45,7 +45,7 @@ public class Car
             System.out.println("You don't have enough money");
         }
     }
-    public void sell(Player player, AutoBot bot)
+    public void sell(Player player, AutoBot bot, Human[] humans)
     {
         Random rn = new Random();
         int x = rn.nextInt(3) + 1;
@@ -53,14 +53,14 @@ public class Car
         {
             System.out.println("You lost one move.");
             System.out.println("The customer thought about it :(");
-            Menu.choose(player,bot);
+            Menu.choose(player,bot,humans);
         }
         else
             {
             player.cash += value;
             player.cash -= this.value * 0.02;
             Car.this.wash(player);
-            Human.setCar(this, Human.findFreeSpace());
+            Human[].setCar(this, Human[].findFreeSpace());
             Player.setCar(null, Player.findInGarage(this));
             System.out.println("You sold " + this + "\nRemember you paid 2% car tax!");
             System.out.println("Account balance: " + player.cash);
