@@ -50,7 +50,7 @@ public class Menu
             }
             else if (choice == 5)
             {
-                Fifth.fifth(player);
+                Fifth.fifth(humans);
                 choose(player,bot,humans);
             }
             else if (choice == 6)
