@@ -31,4 +31,5 @@ public class Player
         }
         return -1;
     }
+    public String toString() {return this.firstName;}
 }
